@@ -7,15 +7,16 @@ var corsOptions = {
   origin: "https://frontend-app-gray.vercel.app/",
 };
 
-//Bye
+// Enable CORS
 app.use(cors(corsOptions));
 
-// parse requests of content-type - application/json
+// Parse requests with JSON payload
 app.use(express.json());
 
-// parse requests of content-type - application/x-www-form-urlencoded
+// Parse URL-encoded requests
 app.use(express.urlencoded({ extended: true }));
-//Kumar
+
+// Connect to the database
 const db = require("./app/models");
 db.sequelize
   .sync()
@@ -26,19 +27,20 @@ db.sequelize
     console.log("Failed to sync db: " + err.message);
   });
 
-// // drop the table if it already exists
-// db.sequelize.sync({ force: true }).then(() => {
-//   console.log("Drop and re-sync db.");
-// });
-
-// simple route
+// Define a simple route
 app.get("/api/students", (req, res) => {
-  res.json({ message: "Welcome to  application." });
+  res.json({ message: "Welcome to the application." });
 });
 
+// Include the tutorial routes
 require("./app/routes/turorial.routes")(app);
 
-// set port, listen for requests
+// Handle 404 errors
+app.use((req, res, next) => {
+  res.status(404).send("404: Page not found");
+});
+
+// Set the port and start the server
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
