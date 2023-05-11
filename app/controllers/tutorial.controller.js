@@ -7,13 +7,13 @@ const Op = db.Sequelize.Op;
 
 // Create and Save a new Tutorial
 exports.create = (req, res) => {
-  // Validate request
-  if (!req.body.email) {
-    res.status(404).send({
-      message: "Content can not be empty!",
-    });
-    return;
-  }
+  // // Validate request
+  // if (!req.body.email) {
+  //   res.status(400).send({
+  //     message: "Content can not be empty!",
+  //   });
+  //   return;
+  // }
 
   // Create a Tutorial
   const tutorial = {
@@ -175,12 +175,12 @@ exports.findAllPublished = (req, res) => {
 
 exports.attendence = (req, res) => {
   //validate Request
-  if (!req.body.date) {
-    res.status(404).send({
-      message: "date cannot empty",
-    });
-    return;
-  }
+  // if (!req.body.date) {
+  //   res.status(400).send({
+  //     message: "date cannot empty",
+  //   });
+  //   return;
+  // }
 
   const turorial = {
     student_id: req.body.student_id,
@@ -299,12 +299,12 @@ exports.findAllSectionNames = (req, res) => {
 
 exports.feeCollectionCreate = (req, res) => {
   // Validate request
-  if (!req.body.amount) {
-    res.status(404).send({
-      message: "Content can not be empty!",
-    });
-    return;
-  }
+  // if (!req.body.amount) {
+  //   res.status(400).send({
+  //     message: "Content can not be empty!",
+  //   });
+  //   return;
+  // }
 
   // Create a Tutorial
   const Collection = {
