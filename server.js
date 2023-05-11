@@ -28,7 +28,7 @@ db.sequelize
   });
 
 // Define a simple route
-app.get("/api/students", (req, res) => {
+app.get("/", (req, res) => {
   res.json({ message: "Welcome to the application." });
 });
 

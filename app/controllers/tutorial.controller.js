@@ -20,9 +20,9 @@ exports.create = (req, res) => {
     admissionnumber: req.body.admissionnumber,
     rollnumber: req.body.rollnumber,
     // published: req.body.published ? req.body.published : false
-    class: req.body.class,
+    classname: req.body.classname,
     section: req.body.section,
-    fristname: req.body.fristname,
+    firstname: req.body.firstname,
     lastname: req.body.lastname,
     gender: req.body.gender,
     dateofbirth: req.body.dateofbirth,
