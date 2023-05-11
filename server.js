@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:4200",
+  origin: "https://frontend-app-gray.vercel.app/",
 };
 
 //Bye
@@ -32,7 +32,7 @@ db.sequelize
 // });
 
 // simple route
-app.get("/", (req, res) => {
+app.get("/api/students", (req, res) => {
   res.json({ message: "Welcome to  application." });
 });
 
