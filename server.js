@@ -7,6 +7,7 @@ var corsOptions = {
   origin: "http://localhost:4200",
 };
 
+//Bye
 app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
