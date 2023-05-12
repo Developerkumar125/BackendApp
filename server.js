@@ -3,12 +3,12 @@ const cors = require("cors");
 
 const app = express();
 
-var corsOptions = {
-  origin: "https://frontend-app-gray.vercel.app/",
-};
+//var corsOptions = {
+  //origin: "https://frontend-app-gray.vercel.app/",
+//};
 
 // Enable CORS
-app.use(cors(corsOptions));
+//app.use(cors(corsOptions));
 
 // Parse requests with JSON payload
 app.use(express.json());
