@@ -9,7 +9,7 @@ const Op = db.Sequelize.Op;
 exports.create = (req, res) => {
   // Validate request
   if (!req.body.email) {
-    res.status(400).send({
+    res.status(404).send({
       message: "Content can not be empty!",
     });
     return;
@@ -176,7 +176,7 @@ exports.findAllPublished = (req, res) => {
 exports.attendence = (req, res) => {
   //validate Request
   if (!req.body.date) {
-    res.status(400).send({
+    res.status(404).send({
       message: "date cannot empty",
     });
     return;
@@ -300,7 +300,7 @@ exports.findAllSectionNames = (req, res) => {
 exports.feeCollectionCreate = (req, res) => {
   // Validate request
   if (!req.body.amount) {
-    res.status(400).send({
+    res.status(404).send({
       message: "Content can not be empty!",
     });
     return;
