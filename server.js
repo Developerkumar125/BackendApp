@@ -1,18 +1,14 @@
 const express = require("express");
 const cors = require("cors");
-const { createProxyMiddleware } = require("http-proxy-middleware");
-const app = express();
-// Create a proxy middleware
-const apiProxy = createProxyMiddleware("/api", {
-  target: "https://schoolapp-y6um.onrender.com/", // Replace with the API endpoint URL
-  changeOrigin: true,
-  pathRewrite: {
-    "^/api": "", // Remove the '/api' path prefix from the request
-  },
-});
 
-app.use("/api", apiProxy);
+const app = express();
+
+var corsOptions = {
+  origin: "https://schoolapp-y6um.onrender.com/",
+};
+
 // Enable CORS
+app.use(cors(corsOptions));
 
 // Parse requests with JSON payload
 app.use(express.json());
