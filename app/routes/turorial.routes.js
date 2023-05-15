@@ -42,5 +42,5 @@ module.exports = (app) => {
   router.post("/fee/collection", fees.feeCollectionCreate);
   router.get("/fee/list", fees.feeCollectionGetAll);
 
-  app.use("/api/students", router);
+  app.use("/api", router);
 };
