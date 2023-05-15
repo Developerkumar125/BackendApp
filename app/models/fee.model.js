@@ -9,7 +9,13 @@ module.exports = (sequelize, Sequelize) => {
     amount: {
       type: Sequelize.STRING,
     },
-  });
+
+  },
+{
+      timestamps: false, // Disable the createdAt and updatedAt fields
+    }
+
+);
 
   return FeeCollection;
 };
