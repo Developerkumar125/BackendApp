@@ -11,7 +11,11 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use('/api', userRoutes);
-
+// Example route to handle user data
+app.get('/api/test', (req, res) => {
+    // Replace with actual logic to fetch users from database
+    res.json({ users: [{ name: 'Alice' }, { name: 'Bob' }] });
+});
 const PORT = process.env.PORT || 9000;
 
 sequelize.sync({ force: false }).then(() => {
