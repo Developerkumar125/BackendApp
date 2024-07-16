@@ -1,0 +1,24 @@
+-- CREATE TABLE orders (
+--     id SERIAL PRIMARY KEY, -- Assuming an auto-incrementing primary key field
+--     category_id INTEGER NOT NULL,
+--     subcategory_id INTEGER NOT NULL,
+--     product_name VARCHAR(10) NOT NULL,
+--     quantity INTEGER NOT NULL CHECK (quantity >= 0 AND quantity <= 9),
+--     item VARCHAR(255) NOT NULL UNIQUE, -- Unique constraint
+--     address VARCHAR(255) NOT NULL,
+--     phone_number VARCHAR(255) NOT NULL,
+--     images BOOLEAN NOT NULL,
+--     coupon_id VARCHAR(255), -- Optional field, so no NOT NULL constraint
+--     description VARCHAR(30) NOT NULL CHECK (LENGTH(description) BETWEEN 20 AND 30),
+--     user_id VARCHAR(255) NOT NULL,
+--     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+--     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+-- );
+
+-- CREATE TABLE payment (
+--     user_id VARCHAR(255) NOT NULL,
+--     trans_id VARCHAR(255) NOT NULL,
+--     purchase_date DATE NOT NULL,
+--     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+--     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+-- );
