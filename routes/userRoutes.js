@@ -29,7 +29,7 @@ router.put('/categories/:id', AdminauthMiddleware, categoryController.updateCate
 router.delete('/categories/:id', AdminauthMiddleware, categoryController.deleteCategory);
 
 //routing for subCategories
-router.get('/subcategories', combinedAuthMiddleware, subcategoryController.getSubcategories);
+router.get('/subcategories', subcategoryController.getSubcategories);
 router.get('/subcategories/:id', combinedAuthMiddleware, subcategoryController.getSubcategory);
 router.post('/subcategories', AdminauthMiddleware, subcategoryController.createSubcategory);
 router.put('/subcategories/:id', AdminauthMiddleware, subcategoryController.updateSubcategory);
